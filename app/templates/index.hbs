@@ -1,8 +1,10 @@
 {{outlet}}
-<p>BUY CHEAP GAMES NOW!</p>
+<div class="container">
+<h1>BUY CHEAP GAMES NOW!</h1>
 
 {{#each model.products as |product|}}
   {{product-tile product=product addToTotal="addToTotal"}}
 {{/each}}
 
 {{display-cart}}
+</div>

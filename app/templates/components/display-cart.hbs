@@ -1,6 +1,10 @@
 <ul>
 {{#each shoppingCart.items as |item|}}
-  <li>{{item.title}} -- ${{item.cost}}</li>
+  <li><a {{action 'showItemDetails'}}>{{item.title}}</a> -- ${{item.cost}}</li>
+  {{#if itemIsClicked}}
+    <img src={{item.image}}>
+    <p>{{item.description}}</p>
+  {{/if}}
 {{/each}}
 </ul>
 
