@@ -1,10 +1,8 @@
 {{outlet}}
-<p>Test</p>
+<p>BUY CHEAP GAMES NOW!</p>
 
 {{#each model.products as |product|}}
-  <h3>{{product.title}}</h3>
-  <img src={{product.image}}>
-  <h4>${{product.cost}}</h4>
-  <p>{{product.description}}</p>
-  <hr>
+  {{product-tile product=product addToTotal="addToTotal"}}
 {{/each}}
+
+{{display-cart}}
