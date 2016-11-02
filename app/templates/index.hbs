@@ -1,0 +1,10 @@
+{{outlet}}
+<p>Test</p>
+
+{{#each model.products as |product|}}
+  <h3>{{product.title}}</h3>
+  <img src={{product.image}}>
+  <h4>${{product.cost}}</h4>
+  <p>{{product.description}}</p>
+  <hr>
+{{/each}}
