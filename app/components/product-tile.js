@@ -8,5 +8,14 @@ export default Ember.Component.extend({
       this.get('shoppingCart').add(item);
       this.get('shoppingCart').calculateTotal();
     },
+
+    writeReview() {
+      var params = {
+        reviewer: this.get('reviewer'),
+        body: this.get('body'),
+        product: this.get('product')
+      };
+      this.sendAction('writeReview', params);
+    }
   }
 });
