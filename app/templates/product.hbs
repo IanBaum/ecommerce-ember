@@ -4,10 +4,13 @@
   {{product-detail product=model}}
   <hr>
   {{new-review product=model writeReview="writeReview"}}
+  <hr>
 
   {{#each model.reviews as |review|}}
-    <h3>{{review.rating}}/5</h3>
-    <h3>{{review.author}} says:</h3>
+    <h4>{{review.rating}}/5</h4>
+    <h5>{{review.author}} says:</h5>
     <p>{{review.content}}</p>
+    <a {{action 'deleteReview' review}}><span class="glyphicon glyphicon-trash"></span></a>
+    <hr>
   {{/each}}
 </div>

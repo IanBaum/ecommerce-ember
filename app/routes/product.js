@@ -5,6 +5,9 @@ export default Ember.Route.extend({
     return this.store.findRecord('product', params.product_id);
   },
 
+  sortBy: ['rating:desc'],
+  sortedReviews: Ember.computed.sort('model.reviews', 'sortBy'),
+
   actions: {
     writeReview(params) {
       var newReview = this.store.createRecord('review', params);
@@ -14,6 +17,12 @@ export default Ember.Route.extend({
         return product.save();
       });
       this.transitionTo('product', product.id);
+    },
+
+    deleteReview(review) {
+      if (confirm('Delete this review?')) {
+        review.destroyRecord();
+      }
     }
   }
 });
