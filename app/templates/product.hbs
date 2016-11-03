@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>{{model.title}}</h2>
+
+  {{product-detail product=model}}
+  <hr>
+  {{new-review product=model writeReview="writeReview"}}
+
+  {{#each model.reviews as |review|}}
+    <h3>{{review.author}} says:</h3>
+    <p>{{review.content}}</p>
+  {{/each}}
+</div>

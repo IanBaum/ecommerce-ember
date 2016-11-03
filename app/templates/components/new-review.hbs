@@ -1,0 +1,9 @@
+<form>
+  <label>Your Name</label>
+  {{input value=author id="author"}}
+
+  <label>Review</label>
+  {{textarea value=content id="content"}}
+
+  <button type="submit" {{action 'writeReview'}}>Button</button>
+</form>

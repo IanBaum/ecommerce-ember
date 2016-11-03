@@ -1,17 +1,7 @@
-<h3>{{product.title}}</h3>
+{{#link-to 'product' product.id}}<h3>{{product.title}}</h3>{{/link-to}}
 <img src={{product.image}}>
 <h4>${{product.cost}}</h4>
 <p>{{product.description}}</p>
 
 <button {{action 'addToCart' product}}>Add to Cart</button>
 <hr>
-
-<form>
-<label>Your Name</label>
-{{input value=reviewer id="reviewer"}}
-
-<label>Review</label>
-{{textarea value=body id="body"}}
-
-<button type="submit" {{action 'writeReview'}}>Button</button>
-</form>
