@@ -5,5 +5,8 @@
   <label>Review</label>
   {{textarea value=content id="content"}}
 
+  <label>Rating</label>
+  {{input type="number" value=rating id="rating" placeholder="Enter a number between 1 and 5"}}
+
   <button type="submit" {{action 'writeReview'}}>Button</button>
 </form>
